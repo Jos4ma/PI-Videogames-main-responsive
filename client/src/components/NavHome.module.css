@@ -271,9 +271,9 @@
 
           font-weight: bolder;
           font-style: italic;
-          padding-top: 0rem;
+          padding-top: 1rem;
           padding-right: 3rem;
-          padding-bottom: 3rem;
+          padding-bottom: 4rem;
           font-size: 3rem;
           color: rgb(0, 0, 46);
           border: 1rem solid var(--green);

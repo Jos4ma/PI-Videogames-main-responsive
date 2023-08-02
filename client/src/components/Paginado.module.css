@@ -1,9 +1,9 @@
- .wrapperPagination {
+.wrapperPagination {
     height: 8vh;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 /*
 .pagination {
     display: flex;
@@ -104,7 +104,7 @@ li{
 
 @media screen and (max-width: 480px) {
   .wrapperPagination {
-    height: 6vh;
+      height: 6vh;
 
   }
 }
