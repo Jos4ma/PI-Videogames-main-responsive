@@ -1,0 +1,203 @@
+.background {
+    background: url("images/philosophy-of-videogames.jpg");
+    width: 100%;
+    height: 1000px;
+    padding-bottom: 3cm;
+    /* display: flex; */
+    /* flex-direction: column;
+    background-size: cover;
+    justify-content: center; */
+    color: aliceblue;
+    top: 0;
+    border: 3px solid black;
+    /* background-color: rgba(0, 0, 0, 0.824); */
+    border-radius: 1px;
+  }
+  
+  /* .background {
+      background: url("imagenes/pikachuHome.jpeg");
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-size: cover;
+      justify-content: center;
+      
+    } */
+    .degradeFrame{
+      background: linear-gradient(transparent, rgb(49, 49, 9) );
+      margin: 4cm;
+      margin-top: 20px;
+      margin-left:10cm;
+      margin-right: 10cm;
+      padding: 0cm;
+      padding-bottom: 1cm;
+      justify-content: center;
+      align-items: center;   
+      align-self: center;
+      border: 5px solid rgba(0, 0, 0, 0.735);
+    }
+
+    .frame {
+      background: url("./images/yelow.jpg");
+      background-size: 110%;
+      /* background:  rgb(205, 202, 50) ; */
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0,5cm;
+      /* width: 45vw; */
+      /* width: 50%;
+      /* height: 65vh; */
+      /* height: 84%;  */
+      width: 50%;
+      height: 80%;
+      border-radius: 20px;
+      margin-top: 14px;
+      padding: 1cm;
+      padding-right: 5cm;
+      border: 5px solid rgba(0, 0, 0, 0.735);
+      
+    }
+  
+  /* .labelLink {
+    margin-right: auto;
+  } */
+  
+  .span {
+    /* margin-left: auto; */
+    justify-content: right;
+    margin: auto;
+    font-size: x-large;
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+    text-shadow: 2px 2px 2px rgb(176, 136, 19);
+    /* background: rgba(70, 33, 10, 0.64); */
+    text-align: center;
+    height: 2%;
+    margin-right: 35px;
+  }
+
+  .inputDiv{
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    text-shadow: 2px 2px 2px rgb(73, 56, 6);
+    text-justify:newspaper;
+  }
+/* para correr las lineas un poco hacia la izquierda */
+.label{
+
+    /* font-weight: 500; */
+    font-size: x-large;
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+    /* list-style-position:outside; */
+    /* margin-top: 30px; */
+    /* margin-right: 35%; */
+    margin-left: 5px;
+    /* width: 1000px; */
+    /* height: 30px; */
+  }
+
+  
+  .title_create {
+      /* position: relative; */
+      margin-left: 2cm;
+      font-size: larger;
+      color: black;
+      font-family: "Kanit", sans-serif;
+      font-weight: lighter;
+      text-shadow: 3px 3px 3px rgb(176, 136, 19);
+      /* background: rgba(70, 33, 10, 0.64); */
+      text-align: center;
+      width: 100%;
+      height: 2%;
+    }
+  
+    .image{
+      width: 240px; 
+      height: 200px;
+      margin-top: 2%;
+      margin-block-end: 3%;
+    }
+  
+    .created{
+      margin: 6% 12% 0% 18%;
+    }
+  
+    .form {
+      color: rgb(8, 8, 8);
+      width: 12cm;
+      padding: 0px 10px;
+      border-bottom: 4px solid transparent;
+      /* font-style: oblique; */
+      /* font-size: 20px; */
+      border: 5px solid rgba(0, 0, 0, 0.735);
+      backdrop-filter: sepia(50%);
+    }
+  
+
+    .input{
+      width: 220px;
+      height: 30px;
+      border-radius: 8px;
+      border: 3px solid rgb(52, 40, 4);
+      font-size: 18px;
+      font-weight: bold;
+      margin-left: auto;
+    }
+    
+    .buttonCreate {
+      margin-top: 15px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 20px 20px;
+      display: inline-block;
+      width: 100px;
+      height: 70px;
+      /* background: rgba(54, 28, 11, 0.64); */
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-weight: bolder;
+      position: static;
+      left: 130px;
+      font-size: large;
+      background: rgb(145, 122, 18, 0.5);
+    }
+  
+    .buttonCreate:active {
+      transform: scale(0.98);
+      box-shadow: 3px 3px 9px black;
+    }
+  
+    .buttonToHome {
+      cursor: pointer;
+      border: none;
+      border-radius: 20px 20px;
+      display: inline-block;
+      width: 150px;
+      height: 45px;
+      background: rgba(149, 147, 21, 0.64);
+      font-family: "Kanit", sans-serif;
+      font-weight: bolder;
+      position: static;
+      justify-content: center;
+      font-size: large;
+      margin-left: 3cm;
+      margin-top:14px;  
+      /* border-radius: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;  
+      height: 55px;
+      margin-top: 15px;
+      margin-bottom: 20px;
+      background-color: rgb(255, 255, 255);
+      font-size: 17px;
+      width: 90%;
+      max-width: 400px; */
+    }
+
+    .buttonPlat {
+      height: 1 cm;
+    }
