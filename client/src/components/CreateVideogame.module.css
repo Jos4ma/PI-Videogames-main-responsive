@@ -12,7 +12,7 @@
     border: 3px solid black;
     /* background-color: rgba(0, 0, 0, 0.824); */
     border-radius: 1px;
-  }
+}
   
   /* .background {
       background: url("imagenes/pikachuHome.jpeg");
@@ -37,82 +37,106 @@
       align-self: center;
       border: 5px solid rgba(0, 0, 0, 0.735);
     }
-
-    .frame {
-      background: url("./images/yelow.jpg");
-      background-size: 110%;
-      /* background:  rgb(205, 202, 50) ; */
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 0,5cm;
-      /* width: 45vw; */
-      /* width: 50%;
-      /* height: 65vh; */
-      /* height: 84%;  */
-      width: 50%;
-      height: 80%;
-      border-radius: 20px;
-      margin-top: 14px;
-      padding: 1cm;
-      padding-right: 5cm;
-      border: 5px solid rgba(0, 0, 0, 0.735);
-      
+      .frame {
+          background: url("./images/yelow.jpg");
+          background-size: 110%;
+          /* background:  rgb(205, 202, 50) ; */
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 0,5cm;
+          /* width: 45vw; */
+          /* width: 50%;
+          /* height: 65vh; */
+          /* height: 84%;  */
+          width: 50%;
+          height: 80%;
+          border-radius: 20px;
+          margin-top: 14px;
+          padding: 1cm;
+          padding-right: 5cm;
+          border: 5px solid rgba(0, 0, 0, 0.735);
+    
+       }
+          .title_create {
+            /* position: relative; */
+            margin-left: 2cm;
+            font-size: larger;
+            color: black;
+            font-family: "Kanit", sans-serif;
+            font-weight: lighter;
+            text-shadow: 3px 3px 3px rgb(176, 136, 19);
+            /* background: rgba(70, 33, 10, 0.64); */
+            text-align: center;
+            width: 100%;
+            height: 2%;
+          }
+          .created{
+            margin: 6% 12% 0% 18%;
+          }
+        
+            .form {
+                color: rgb(8, 8, 8);
+                width: 12cm;
+                padding: 0px 10px;
+                border-bottom: 4px solid transparent;
+                /* font-style: oblique; */
+                /* font-size: 20px; */
+                border: 5px solid rgba(0, 0, 0, 0.735);
+                backdrop-filter: sepia(50%);
+            }
+              .inputDiv{
+                  display: flex;
+                  margin: 20px;
+                  align-items: center;
+                  text-shadow: 2px 2px 2px rgb(73, 56, 6);
+                  text-justify:newspaper;
+              }
+                  .label{
+                    /* font-weight: 500; */
+                    font-size: x-large;
+                    font-family: "Kanit", sans-serif;
+                    font-weight: 700;
+                    /* list-style-position:outside; */
+                    /* margin-top: 30px; */
+                    /* margin-right: 35%; */
+                    margin-left: 5px;
+                    /* width: 1000px; */
+                    /* height: 30px; */
+                  }
+          
+                  .input{
+                    width: 220px;
+                    height: 30px;
+                    border-radius: 8px;
+                    border: 3px solid rgb(52, 40, 4);
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-left: auto;
+                  }
+            
+        /* .labelLink {
+                margin-right: auto;
+            } */
+            
+      .span {
+        /* margin-left: auto; */
+        justify-content: right;
+        margin: auto;
+        font-size: x-large;
+        font-family: "Kanit", sans-serif;
+        font-weight: 700;
+        text-shadow: 2px 2px 2px rgb(176, 136, 19);
+        /* background: rgba(70, 33, 10, 0.64); */
+        text-align: center;
+        height: 2%;
+        margin-right: 35px;
     }
-  
-  /* .labelLink {
-    margin-right: auto;
-  } */
-  
-  .span {
-    /* margin-left: auto; */
-    justify-content: right;
-    margin: auto;
-    font-size: x-large;
-    font-family: "Kanit", sans-serif;
-    font-weight: 700;
-    text-shadow: 2px 2px 2px rgb(176, 136, 19);
-    /* background: rgba(70, 33, 10, 0.64); */
-    text-align: center;
-    height: 2%;
-    margin-right: 35px;
-  }
 
-  .inputDiv{
-    display: flex;
-    margin: 20px;
-    align-items: center;
-    text-shadow: 2px 2px 2px rgb(73, 56, 6);
-    text-justify:newspaper;
-  }
-/* para correr las lineas un poco hacia la izquierda */
-.label{
 
-    /* font-weight: 500; */
-    font-size: x-large;
-    font-family: "Kanit", sans-serif;
-    font-weight: 700;
-    /* list-style-position:outside; */
-    /* margin-top: 30px; */
-    /* margin-right: 35%; */
-    margin-left: 5px;
-    /* width: 1000px; */
-    /* height: 30px; */
-  }
+    /* para correr las lineas un poco hacia la izquierda */
 
   
-  .title_create {
-      /* position: relative; */
-      margin-left: 2cm;
-      font-size: larger;
-      color: black;
-      font-family: "Kanit", sans-serif;
-      font-weight: lighter;
-      text-shadow: 3px 3px 3px rgb(176, 136, 19);
-      /* background: rgba(70, 33, 10, 0.64); */
-      text-align: center;
-      width: 100%;
-      height: 2%;
-    }
+
   
     .image{
       width: 240px; 
@@ -121,32 +145,12 @@
       margin-block-end: 3%;
     }
   
-    .created{
-      margin: 6% 12% 0% 18%;
-    }
-  
-    .form {
-      color: rgb(8, 8, 8);
-      width: 12cm;
-      padding: 0px 10px;
-      border-bottom: 4px solid transparent;
-      /* font-style: oblique; */
-      /* font-size: 20px; */
-      border: 5px solid rgba(0, 0, 0, 0.735);
-      backdrop-filter: sepia(50%);
-    }
-  
 
-    .input{
-      width: 220px;
-      height: 30px;
-      border-radius: 8px;
-      border: 3px solid rgb(52, 40, 4);
-      font-size: 18px;
-      font-weight: bold;
-      margin-left: auto;
+  
+    .buttonPlat {
+      height: 1 cm;
     }
-    
+
     .buttonCreate {
       margin-top: 15px;
       margin-bottom: 10px;
@@ -198,6 +202,219 @@
       max-width: 400px; */
     }
 
-    .buttonPlat {
-      height: 1 cm;
+
+@media screen and (max-width: 480px) {
+  
+    .background {
+      background: url("images/philosophy-of-videogames.jpg");
+      width: 90%;
+      height: auto;
+      padding-bottom: 1rem;
+      /* display: flex; */
+      /* flex-direction: column;
+      background-size: cover;
+      justify-content: center; */
+      color: aliceblue;
+      top: 0;
+      border: 1rem solid black;
+      /* background-color: rgba(0, 0, 0, 0.824); */
+
+  }
+    .degradeFrame{
+      background: linear-gradient(transparent, rgb(49, 49, 9) );
+      margin: 0.3rem;
+      margin-top: 0.5rem;
+      margin-left:0.5rem;
+      margin-right: 0.5rem;
+      height: auto;
+      padding: 0rem;
+      padding-bottom: 0rem;
+      justify-content: center;
+      align-items: center;   
+      align-self: center;
+      border: 1rem solid rgba(0, 0, 0, 0.6);
     }
+      .frame {
+        background: url("./images/yelow.jpg");
+        filter: grayscale(30%);
+        background-size: 100%;
+        /* opacity: 0.2; */
+        /* background:  rgb(205, 202, 50) ; */
+        margin-left: 0rem;
+        margin-right: 0rem;
+        margin-bottom: 1rem;
+        /* width: 45vw; */
+        /* width: 50%;
+          /* height: 65vh; */
+        /* height: 84%;  */
+        width: 90%;
+        height: auto;
+        border-radius: 2rem;
+        margin-top: 0rem;
+        padding: 0rem;
+        padding-right: 0rem;
+        border: 1rem solid rgba(0, 0, 0, 0.735);
+      }
+        .title_create {
+          /* position: relative; */
+          margin-left: 0rem;
+          font-size: larger;
+          display: inline-block;
+          background: rgba(149, 147, 21, 0.64);
+          border-radius: 20rem 20rem;
+          color: black;
+          font-family: "Kanit", sans-serif;
+          font-weight: lighter;
+          text-shadow: 1rem 1rem 1rem rgb(176, 136, 19);
+          /* background: rgba(70, 33, 10, 0.64); */
+          text-align: center;
+          
+          height: 2%;
+        }
+        .created{
+          margin: 1% 1% 0% 1%;
+          width: 16rem;
+          height: auto;
+        }
+          .form {
+            color: rgb(8, 8, 8);
+            width: auto;
+            height: auto;
+            padding: 1rem 0rem;
+            border-bottom: 1rem solid transparent;
+            /* font-style: oblique; */
+            /* font-size: 20px; */
+            border: 1rem solid rgba(0, 0, 0, 0.735);
+            backdrop-filter: sepia(50%);
+          }
+            .inputDiv{
+              display: contents;
+              height: auto;
+              margin: 0.5rem;
+              align-items: center;
+              text-shadow: 1rem 1rem 1rem rgb(73, 56, 6);
+              text-justify:newspaper;
+            }
+              .label{
+                /* font-weight: 500; */
+                /* font-size: x-large; */
+                font-size: 1.4rem;
+                font-family: "Kanit", sans-serif;
+                font-weight: 2rem;
+                display: inline-block;
+                background: rgba(149, 147, 21, 0.64);
+                border-radius: 20rem 20rem;
+                /* list-style-position:outside; */
+                /* margin-top: 30px; */
+                /* margin-right: 35%; */
+                margin-left: 0rem;
+                margin-bottom: 0.5rem;
+                margin-top: 1rem;
+                /* width: 1000px; */
+                /* height: 30px; */
+              }
+              .labelComboBox{
+                font-size: x-large;
+                font-family: "Kanit", sans-serif;
+                font-weight: bolder;
+                display: inline-block;
+                background: rgba(4, 110, 17, 0.5);
+                border-radius: 20rem 20rem;
+                margin-left: 0rem;
+                margin-top: 1rem;
+                margin-bottom: 0rem;
+              }
+              .input{
+                width: 10rem;
+                height: 1.2rem;
+                border-radius: 0.2rem;
+                border: 0.2rem solid rgb(52, 40, 4);
+                font-size: 1rem;
+                font-weight: bold;
+                margin-left: auto;
+              }
+
+
+              .buttonPlat {
+                height: 1rem;
+              }
+          
+              .buttonCreate {
+                margin-top: 14px;
+                margin-bottom: 1rem;
+                cursor: pointer;
+                border: none;
+                width: auto;
+                height: 45px;
+                /* background: rgba(54, 28, 11, 0.64); */
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-weight: bolder;
+                position: relative;
+                left: 0rem;
+                font-size: large;
+                background: rgba(205, 55, 39, 0.80);
+                display: inline-block;
+                border-radius: 20rem 20rem;
+              }
+              .buttonToHome {
+                margin-top:2rem;  
+                margin-bottom: 2rem;
+                cursor: pointer;
+                border: none;
+                border-radius: 20px 20px;
+                display: inline-block;
+                width: auto;
+                height: 45px;
+                background: rgba(205, 55, 39, 0.64);
+                font-family: "Kanit", sans-serif;
+                font-weight: bolder;
+                position: relative;
+                justify-content: center;
+                font-size: large;
+                margin-left: 0rem;
+                
+                /* border-radius: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;  
+                height: 55px;
+                margin-top: 15px;
+                margin-bottom: 20px;
+                background-color: rgb(255, 255, 255);
+                font-size: 17px;
+                width: 90%;
+                max-width: 400px; */
+              }
+
+              .span {
+                /* margin-left: auto; */
+                justify-content: right;
+                margin: auto;
+                margin-top: 1.5rem;
+                margin-bottom: 0.5rem;
+                font-size: 1.3rem;
+                font-family: "Kanit", sans-serif;
+                font-weight: 0rem;
+                text-shadow: 0rem 0rem 0rem rgb(176, 136, 19);
+                /* background: rgba(70, 33, 10, 0.64); */
+                text-align: center;
+                height: 2%;
+                display: inline-block;
+                background: rgba(149, 147, 21, 0.64);
+                border-radius: 20rem 20rem;
+                margin-right: 1rem;
+            }
+        
+        
+            /* para correr las lineas un poco hacia la izquierda */
+        
+          
+        
+          
+            .image{
+              width: 2rem; 
+              height: 2rem;
+              margin-top: 2%;
+              margin-block-end: 3%;
+            }
+}

@@ -217,6 +217,7 @@
           align-self: center; 
           width: 100%;
           margin-bottom: 4rem;
+          height: auto;
           /* align-items: stretch;
           margin-left: auto;
           position: sticky;
@@ -226,7 +227,7 @@
       }
       .list {
           display: inline-block;
-          margin-bottom: 0rem;
+
       }
       .btnCreate {
           margin-top: 1rem;
@@ -261,9 +262,8 @@
           padding: 0,5rem;
           margin-right: 3rem;
           border-radius: 5%;
-          margin-bottom: 0rem;
 
-  }
+    }
 
          .title{
           height: 1rem;
@@ -271,10 +271,10 @@
 
           font-weight: bolder;
           font-style: italic;
-          padding-top: 1rem;
+          padding-top: 3rem;
           padding-right: 3rem;
           padding-bottom: 4rem;
-          font-size: 3rem;
+          font-size: 2.5rem;
           color: rgb(0, 0, 46);
           border: 1rem solid var(--green);
           text-shadow: 2rem 1rem rgb(255, 68, 0);

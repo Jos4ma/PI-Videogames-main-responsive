@@ -137,178 +137,177 @@ export default function CreateVideogame() {
   return (
     <div className={style.background}>
       <div className={style.degradeFrame}>
-      <div className={style.frame}>
-      <div className={style.title_create}>
-        <h1>CREATE YOUR OWN VIDEOGAME CARD</h1>
-      </div>
+        <div className={style.frame}>
+          <div className={style.title_create}>
+              <h1>CREATE YOUR OWN VIDEOGAME CARD</h1>
+          </div>
 
-      <div className={style.dogCreate}>
-        <div className={style.created}>
-          <form className={style.form}  onSubmit={(e) => handleSubmit(e)}>
-            <div className={style.inputDiv}>
-              <label  className={style.label}>Name: </label>
-              <input
-                className={style.input}
-                onChange={(e) => handleInputChange(e)}
-                type="text"
-                name="name"
-                value={input.name=input.name.charAt(0).toUpperCase()+input.name.slice(1)}
-                required
-              />
-              <span >
-                {errors.name && <p>{errors.name}</p>}
-              </span>
-            </div>
+          <div className={style.dogCreate}>
+            <div className={style.created}>
+              <form className={style.form}  onSubmit={(e) => handleSubmit(e)}>
+                <div className={style.inputDiv}>
+                  <label  className={style.label}>Name: </label>
+                    <input
+                      className={style.input}
+                      onChange={(e) => handleInputChange(e)}
+                      type="text"
+                      name="name"
+                      value={input.name=input.name.charAt(0).toUpperCase()+input.name.slice(1)}
+                      required
+                    />
+                  <span >
+                  {errors.name && <p>{errors.name}</p>}
+                  </span>
+                </div>
 
-            <div className={style.inputDiv}>
-              <label className={style.label}>Released: </label>
-              <input
-                className={style.input}
-                onChange={(e) => handleInputChange(e)}
-                type="text"
-                name="released"
-                value={input.released}
-                required
-              />
-              <span >
-                {errors.released && <p>{errors.released}</p>}
-              </span>
-            </div>
+                <div className={style.inputDiv}>
+                    <label className={style.label}>Released: </label>
+                    <input
+                        className={style.input}
+                        onChange={(e) => handleInputChange(e)}
+                        type="text"
+                        name="released"
+                        value={input.released}
+                        required
+                      />
+                    <span >
+                        {errors.released && <p>{errors.released}</p>}
+                    </span>
+                </div>
 
-            <div className={style.inputDiv}>
-              <label className={style.label}>Description: </label>
-              <input
-                className={style.input}
-                onChange={(e) => handleInputChange(e)}
-                type="text"
-                name="description"
-                value={input.description}
-                required
-              />
-              <span >
-                {errors.description && <p>{errors.description}</p>}
-              </span>
-            </div>
+                <div className={style.inputDiv}>
+                  <label className={style.label}>Description: </label>
+                  <input
+                      className={style.input}
+                      onChange={(e) => handleInputChange(e)}
+                      type="text"
+                      name="description"
+                      value={input.description}
+                      required
+                    />
+                  <span >
+                      {errors.description && <p>{errors.description}</p>}
+                  </span>
+                </div>
 
-            <div className={style.inputDiv}>
-              <label className={style.label}>Rating: </label>
-              <input
-                className={style.input}
-                onChange={(e) => handleInputChange(e)}
-                type="text"
-                name="rating"
-                value={input.rating}
-                required
-              />
-              <span >
-                {errors.description && <p>{errors.description}</p>}
-              </span>
-            </div>
+                <div className={style.inputDiv}>
+                  <label className={style.label}>Rating: </label>
+                  <input
+                      className={style.input}
+                      onChange={(e) => handleInputChange(e)}
+                      type="text"
+                      name="rating"
+                      value={input.rating}
+                      required
+                  />
+                  <span >
+                      {errors.description && <p>{errors.description}</p>}
+                  </span>
+                </div>
 
-            <div className={style.inputDiv}>
-            <select
-                className={style.label}
-                onChange={(e) => handleSelectGenres(e)}
-              >
-                <option hidden>Genres</option>
-                {genres.map((el) => (
-                  <option value={el.name} key={el.id}>
-                    {el.name}
-                  </option>
+                <div className={style.inputDiv}>
+                    <select
+                      className={style.labelComboBox}
+                      onChange={(e) => handleSelectGenres(e)}
+                    >
+                    <option hidden>Genres</option>
+                        {genres.map((el) => (
+                    <option value={el.name} key={el.id}>
+                          {el.name}
+                    </option>
+                    ))}
+                    </select>
+                </div>
+                {input.genres.map((el) => (
+                <div className={style.buttonPlat} key={el}>
+                  <button
+                      className={style.buttonCreate}
+                      onClick={() => handleDeleteGenres(el)}
+                  >
+                  {el}
+                  </button>
+                </div>
                 ))}
-              </select>
-            </div>
-
-            {input.genres.map((el) => (
-            <div className={style.buttonPlat} key={el}>
-              <button
-                className={style.buttonCreate}
-                onClick={() => handleDeleteGenres(el)}
-              >
-                {el}
-              </button>
-            </div>
-          ))}
 
 
-          <div className={style.inputDiv}>
-            <select
-                className={style.label}
-                onChange={(e) => handleSelectPlatforms(e)}
-              >
-                <option hidden>Platforms</option>
-                {valor.map((el) => (
-                  <option value={el.name} key={el.id}>
-                    {el.name}
-                  </option>
+                <div className={style.inputDiv}>
+                  <select
+                      className={style.labelComboBox}
+                      onChange={(e) => handleSelectPlatforms(e)}
+                  >
+                    <option hidden>Platforms</option>
+                      {valor.map((el) => (
+                      <option value={el.name} key={el.id}>
+                      {el.name}
+                    </option>
+                    ))}
+                  </select>
+                </div>
+
+                {input.platforms.map((el) => (
+                <div className={style.buttonPlat} key={el}>
+                    <button
+                        className={style.buttonCreate}
+                        onClick={() => handleDeletePlatforms(el)}
+                      >
+                    { el}
+                    </button>
+                </div>
                 ))}
-              </select>
-            </div>
-
-            {input.platforms.map((el) => (
-            <div className={style.buttonPlat} key={el}>
-              <button
-                className={style.buttonCreate}
-                onClick={() => handleDeletePlatforms(el)}
-              >
-                {el}
-              </button>
-            </div>
-          ))}
               
-{/* 
-            <div className={style.inputDiv}>
-              <label className={style.label}>Platforms:</label>
-              <input
+                {/* 
+                <div className={style.inputDiv}>
+                <label className={style.label}>Platforms:</label>
+                <input
                 className={style.input}
                 onChange={(e) => handleInputChange(e)}
                 type="text"
                 name="platforms"
                 value={input.platforms}
                 required
-              />
-              <span >
+                />
+                <span >
                 {errors.platforms && <p>{errors.platforms}</p>}
-              </span>
-            </div>
-             */}
+                </span>
+                </div>
+                */}
 
-            <div>
-            {/* {input.urlImg!==''? 
-               (<img src={input.image} alt='new videogame' width='240px' height='200px' />) :
-               (<img src={defaultImage}  alt='new videogame' className={style.image} />)}
-               <hr/>
-             */}
-            <label className={style.labelLink}>
-             {errors.image? <span className={style.error}>{errors.image}</span> :
-            <span  htmlFor="image" className={style.span}>URL Image: </span>}
-            <input 
-                name='image'
-                className={style.input}
-                type='url'
-                placeholder="Add link of image"
-                onChange={(e) => handleInputChange(e)}
-                //porque no funciona la ter
-                value={input.image} />
-            </label>
-             <hr/>
-            </div>
+                <div>
+                  {/* {input.urlImg!==''? 
+                    (<img src={input.image} alt='new videogame' width='240px' height='200px' />) :
+                    (<img src={defaultImage}  alt='new videogame' className={style.image} />)}
+                    <hr/>
+                    */}
+                    <label className={style.labelLink}>
+                      {errors.image? <span className={style.error}>{errors.image}</span> :
+                      <span  htmlFor="image" className={style.span}>URL Image: </span>}
+                      <input 
+                          name='image'
+                          className={style.input}
+                          type='url'
+                          placeholder="Add link of image"
+                          onChange={(e) => handleInputChange(e)}
+                          //porque no funciona la ter
+                          value={input.image} />
+                    </label>
+                    <hr/>
+                </div>
 
 
-            <div >
-              <button className={style.buttonCreate} type="submit">
-                CREATE A POKEMON
-              </button>
+                <div >
+                    <button className={style.buttonCreate} type="submit">
+                      CREATE A POKEMON
+                    </button>
+                </div>
+              </form>
+              <div >
+                <Link to="/home">
+                    <button className={style.buttonToHome}>HOME</button>
+                </Link>
+              </div>
             </div>
-          </form>
-          <div >
-            <Link to="/home">
-              <button className={style.buttonToHome}>HOME</button>
-            </Link>
           </div>
         </div>
-      </div>
-      </div>
       </div>
     </div>
   );
