@@ -62,7 +62,7 @@
 }
 
 .loader {
-    justify-content: center;
+    width: 50%;
 }
 
 .h1 {
@@ -139,4 +139,8 @@
       left: 46%;
       transform: translate(-50%, -50%);
   }
+  .loader {
+    margin-left: 8%;
+    display: I;
+}
 } 

@@ -78,3 +78,46 @@
      background-position: 0% 50%;
     }
    }
+
+
+   @media screen and (max-width: 480px) {
+    .body {
+      background: url("./images/philosophy-of-videogames.jpg");
+      width: auto;
+      height: 42rem;
+      display: flex;
+      flex-direction: column;
+      background-size: cover;
+      justify-content: center;
+    }
+    .neons {
+      margin-top: 2.5rem;
+      margin-bottom: 4rem;
+      text-align: center;
+      font-size: 4rem;
+      font-family: 'Lobster', cursive;
+      text-align: center;
+      font-weight: bold;
+      -webkit-animation: glow 2s ease-in-out infinite alternate;
+      -moz-animation: glow 2s ease-in-out infinite alternate;
+      animation: glow 2s ease-in-out infinite alternate;
+   }
+    .button {
+      background: linear-gradient(-45deg, #6b2ddf, #9f69fe, #27c8b7, #4f02de);
+      background-size: 800% 400%;
+      font-family: 'Creepster', cursive;
+      display: inline-block;
+      border: none;
+      border-radius: 30px;
+      text-shadow: 0 0 10px rgb(255, 255, 255);
+      font-size: 40px;
+      font-weight: 700;
+      color: rgb(0, 0, 0);
+      transition: all .5s ease-in-out;
+      animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both;
+      width: auto;
+      height: 200px;
+      cursor: pointer;
+      margin-bottom: 5.5rem;
+     }
+   }
