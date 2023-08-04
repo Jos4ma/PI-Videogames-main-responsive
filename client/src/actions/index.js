@@ -16,7 +16,7 @@ export const APIoBD = "APIoBD"
 export function getAllVideogames(){
     return async function(dispatch){
       
-      var json = await axios.get('https://videogames-api-ashen.vercel.app/allVideogames')
+      var json = await axios.get('https://pi-videogames-main-back-r.vercel.app/allVideogames')
         //var json = await axios.get('https://pi-videogames-main-back-r.vercel.app/allVideogames')
         //var json = await axios.get('http://localhost:3001/allVideogames')
         //console.log(json.data)
