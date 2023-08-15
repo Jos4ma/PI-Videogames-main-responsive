@@ -98,7 +98,12 @@ export default function Home () {
                 })
             
             )}                                     
-        </div>            
+        </div>           
+            {/* <div className={style.navBar}>
+                <ul className={style.navhome_Botton}>
+                    <div className={style.titleGray}>  </div>
+                </ul>
+            </div>  */}
     </div>
     )
 }

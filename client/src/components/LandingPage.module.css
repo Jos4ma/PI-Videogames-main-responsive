@@ -84,6 +84,7 @@
     .body {
       background: url("./images/philosophy-of-videogames.jpg");
       width: auto;
+      position: absolute;
       height: 42rem;
       display: flex;
       flex-direction: column;
