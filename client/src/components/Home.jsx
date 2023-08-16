@@ -99,11 +99,11 @@ export default function Home () {
             
             )}                                     
         </div>           
-            {/* <div className={style.navBar}>
+            <div className={style.navBar}>
                 <ul className={style.navhome_Botton}>
-                    <div className={style.titleGray}>  </div>
+                    <div className={style.titleGray}>  created by JOSEMA </div>
                 </ul>
-            </div>  */}
+            </div> 
     </div>
     )
 }

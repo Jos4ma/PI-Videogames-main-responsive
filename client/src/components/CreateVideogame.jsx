@@ -296,7 +296,7 @@ export default function CreateVideogame() {
 
                 <div >
                     <button className={style.buttonCreate} type="submit">
-                      CREATE A POKEMON
+                      CREATE A VIDEOGAME
                     </button>
                 </div>
               </form>
