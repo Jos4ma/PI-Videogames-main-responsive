@@ -1,7 +1,16 @@
 const axios = require('axios')
 const { Gender, Videogame } = require("../db");
+const videogameSchema = require('../database/schemas/videogameSchema');
 //Función para normalizar la respuesta que llega de la api
 const { API_KEY } = process.env;
+const store = require("../database/index.js")
+
+
+const mongoose = require("mongoose")
+// console.log(MONGO_URI)
+require("dotenv").config()
+const {MONGO_URI} = process.env
+const conn = mongoose.createConnection(MONGO_URI)
 
 
 async function  pInfo(videogame)  {
@@ -60,6 +69,24 @@ const getApiVideogames = async (req, res) => {
 	}
 };
 
+const mongoDatabase = async () => {
+    // const {model} = req.params
+    //response = conn.model("Planet", require("../database/schemas/planetSchema"))
+    var objeto1 = conn.model("Videogame",require("../database/schemas/videogameSchema"))
+    var objeto2 = await objeto1.find()
+    return objeto2.map(objeto=>{
+        objeto = objeto._doc;
+        for (let clave in objeto) {
+          if (clave === '_id') {
+              objeto["id"] = objeto[clave]; // Crea una nueva clave con el nuevo nombre
+              delete objeto[clave]; // Elimina la clave antigua
+          }
+        }
+        return objeto
+        })
+
+}
+
 
 const getDbInfoAll = async () => {
      var responseDb = await Videogame.findAll({
@@ -93,24 +120,36 @@ const getDbInfoAll = async () => {
 
    
 
-const getAllPokemon = async () => {
-        const apiInfo = await getApiVideogames();
-        // const dbInfoBig = await getDbInfoAll();
+const getAllVideogames = async () => {
+        //const apiInfo = await getApiVideogames();
+        //const dbInfoBig = await getDbInfoAll();
+         const dbInfoBig = await mongoDatabase();
         //const totalInfo = dbInfoBig.concat(apiInfo);
-        return apiInfo;
+         var perro = [
+          {
+            id: '3',
+            name: 'Mario 1',
+            description: 'the first great game',
+            released: '1985',
+            rating: '7',
+            platforms: '444',
+            image: 'https://www5.minijuegosgratis.com/v3/games/thumbnails/222662_1.jpg'
+          }
+        ]
+        return dbInfoBig;
   };
 
 
 const joinAllDates = async (req, res) => {
         const { name } = req.query;
-        const videogamesTotal = await getAllPokemon(); //toda la informacion se une en 
+        const videogamesTotal = await getAllVideogames(); //toda la informacion se une en 
     if (name) {
         let videogamesTitle = await videogamesTotal.filter((r) =>
             r.name.toLowerCase().includes(name.toLowerCase())
         );
         videogamesTitle.length
             ? res.status(200).json(videogamesTitle)
-            : res.status(404).send("This pokemon doesn't exist -.-");
+            : res.status(404).send("This videogame doesn't exist -.-");
     } else {
          res.status(200).json(videogamesTotal);
     }
@@ -130,6 +169,8 @@ const joinAllDates = async (req, res) => {
             console.log(error);
         }
   };
+
+
 
   const postVideogame = async (req, res, next) => {
     try{
@@ -158,6 +199,7 @@ const joinAllDates = async (req, res) => {
         }
     }; 
   
+
     const deleteVideogame = async (req, res) => {
         try {
           const { id } = req.params;
