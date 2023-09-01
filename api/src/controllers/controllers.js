@@ -121,22 +121,11 @@ const getDbInfoAll = async () => {
    
 
 const getAllVideogames = async () => {
-        //const apiInfo = await getApiVideogames();
+        const apiInfo = await getApiVideogames();
         //const dbInfoBig = await getDbInfoAll();
-         const dbInfoBig = await mongoDatabase();
+        //const dbInfoBig = await mongoDatabase();
         //const totalInfo = dbInfoBig.concat(apiInfo);
-         var perro = [
-          {
-            id: '3',
-            name: 'Mario 1',
-            description: 'the first great game',
-            released: '1985',
-            rating: '7',
-            platforms: '444',
-            image: 'https://www5.minijuegosgratis.com/v3/games/thumbnails/222662_1.jpg'
-          }
-        ]
-        return dbInfoBig;
+        return apiInfo;
   };
 
 
