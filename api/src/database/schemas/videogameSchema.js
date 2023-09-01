@@ -6,6 +6,7 @@ const videogameSchema = new Schema({
     description: String,
     released: String,
     rating: String,
+    genders: String,
     platforms: String,
     image: String,
     // homeworld: { type: String, ref: "Planet"},

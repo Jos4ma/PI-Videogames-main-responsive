@@ -125,6 +125,7 @@ const getAllVideogames = async () => {
         //const dbInfoBig = await getDbInfoAll();
         const dbInfoBig = await mongoDatabase();
         const totalInfo = dbInfoBig.concat(apiInfo);
+        console.log(dbInfoBig)
         return totalInfo;
   };
 
