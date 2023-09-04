@@ -1,15 +1,16 @@
 .charge {
 
     margin: auto;
-    position: absolute;
+    margin-left: 1650%;
+    position: relative;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     
     text-align: center;
-  
-    height: 50px;
+    padding-top: 70%;
+    height: 100px;
     width: 100px;
 }
 
@@ -70,10 +71,11 @@
         right: 0;
         bottom: 0;
         left: 0;
-        
+        padding-top: 2%;
+        margin-bottom: 4rem;
         text-align: center;
-      
-        margin-top: 130%;
+        padding-bottom: 6rem;
+        margin-top: 120%;
     }
     .spinner {
         --size-of-spinner: 60px;
