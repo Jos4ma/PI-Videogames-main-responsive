@@ -148,7 +148,7 @@ const joinAllDates = async (req, res) => {
   const getDetail = async(req, res, next) => {
     try {
         const { id } = req.params;
-        var VideogameInfo = await getAllPokemon()
+        var VideogameInfo = await getAllVideogames()
         var videogameId = VideogameInfo.find((el)=>el.id===id);
         if (videogameId) {
                   return res.json({videogameId});
