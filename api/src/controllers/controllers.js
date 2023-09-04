@@ -100,7 +100,7 @@ const getDbInfoAll = async () => {
     });
     const response = responseDb.map(el =>{
       const genders = el.dataValues.genders.map(el => el.dataValues.name).toString()
-      console.log(el)
+      //console.log(el)
       return {
           id: el.id,
           name: el.name,
