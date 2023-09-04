@@ -16,7 +16,7 @@ export const APIoBD = "APIoBD"
 export function getAllVideogames(){
     return async function(dispatch){
       
-      var json = await axios.get('https://vercel.com/jos4ma/pi-videogames-main-back-r/allVideogames')
+      var json = await axios.get('https://pi-videogames-main-back-r.vercel.app/allVideogames')
         //var json = await axios.get('https://pi-videogames-main-back-r.vercel.app/allVideogames')
         //var json = await axios.get('http://localhost:3001/allVideogames')
         console.log(json.data)
@@ -32,7 +32,7 @@ export function getDetail(payload) {
     return async function (dispatch) {
       try {
         //var detail = await axios.get(`http://localhost:3001/allVideogames/detail/${payload}`)
-        const detail = await axios.get(`https://vercel.com/jos4ma/pi-videogames-main-back-r/allVideogames/detail/${payload}`);
+        const detail = await axios.get(`https://pi-videogames-main-back-r.vercel.app/allVideogames/detail/${payload}`);
         //console.log(detail.data.result)
          console.log(detail.data.videogameId)
         return dispatch({
