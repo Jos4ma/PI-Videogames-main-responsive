@@ -37,7 +37,7 @@ export function getDetail(payload) {
          console.log(detail.data.videogameId)
         return dispatch({
           type: "GET_DETAIL",
-          payload: detail.data.videogameId,
+          payload: detail.data,
         });
       } catch (error) {
         console.log(error);
