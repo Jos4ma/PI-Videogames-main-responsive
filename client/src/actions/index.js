@@ -16,10 +16,10 @@ export const APIoBD = "APIoBD"
 export function getAllVideogames(){
     return async function(dispatch){
       
-      var json = await axios.get('https://pi-videogames-main-responsive.vercel.app/allVideogames')
-      //  var json = await axios.get('https://pi-videogames-main-back-r.vercel.app/allVideogames')
-      //var json = await axios.get('http://localhost:3001/allVideogames')
-        //console.log(json.data)
+      var json = await axios.get('https://pi-videogames-main-back-ja8zngrpo-jos4ma.vercel.app/allVideogames')
+        //var json = await axios.get('https://pi-videogames-main-back-r.vercel.app/allVideogames')
+        //var json = await axios.get('http://localhost:3001/allVideogames')
+        console.log(json.data)
         return dispatch({
             type: 'GET_ALL_VIDEOGAMES',
             payload: json.data //estara buena esta extraccion de datos?
@@ -31,7 +31,7 @@ export function getDetail(payload) {
   console.log(payload)
     return async function (dispatch) {
       try {
-        const detail = await axios.get(`https://pi-videogames-main-responsive.vercel.app/allVideogames/detail/${payload}`);
+        const detail = await axios.get(`https://pi-videogames-main-back-ja8zngrpo-jos4ma.vercel.app/allVideogames/detail/${payload}`);
         //console.log(detail.data.result)
          console.log(detail.data.videogameId)
         return dispatch({
@@ -48,7 +48,7 @@ export function getDetail(payload) {
     return async function (dispatch) {
       try {
         console.log(id)
-        const deleteVideogame = await axios.delete(`https://pi-videogames-main-responsive.vercel.app/allVideogames/delete/${id}`);
+        const deleteVideogame = await axios.delete(`https://pi-videogames-main-back-ja8zngrpo-jos4ma.vercel.app/allVideogames/delete/${id}`);
         console.log(deleteVideogame)
         return dispatch({
           type: "DELETE_VIDEOGAME",
@@ -63,7 +63,7 @@ export function getDetail(payload) {
   export function postVideogame(input){
     console.log(input)
     return async(dispatch)=>{
-        const responsePost = await axios.post('https://pi-videogames-main-responsive.vercel.app/allVideogames/create', input);
+        const responsePost = await axios.post('https://pi-videogames-main-back-ja8zngrpo-jos4ma.vercel.app/allVideogames/create', input);
         input.id = responsePost.data.id;
         dispatch({
             type: "POST_VIDEOGAME",
@@ -76,7 +76,7 @@ export function getDetail(payload) {
   export function getVideogameByName(payload) {
     return async function (dispatch) {
       try {
-        let videogamesNames = await axios.get(`https://pi-videogames-main-responsive.vercel.app/allVideogames?name=${payload}`);
+        let videogamesNames = await axios.get(`https://pi-videogames-main-back-ja8zngrpo-jos4ma.vercel.app/allVideogames?name=${payload}`);
         //console.log(pokemonsNames.data)
         return dispatch({
           type: "GET_VIDEOGAME_BY_NAME",
@@ -107,7 +107,7 @@ export function getDetail(payload) {
 
   export function getAllGenres() {
     return async function (dispatch) {
-      let genres = await axios.get("https://pi-videogames-main-responsive.vercel.app/allVideogames/genres");
+      let genres = await axios.get("https://pi-videogames-main-back-ja8zngrpo-jos4ma.vercel.app/allVideogames/genres");
       return dispatch({
         type: "GET_ALL_GENRES",
         payload: genres.data,
