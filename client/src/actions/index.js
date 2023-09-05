@@ -34,10 +34,10 @@ export function getDetail(payload) {
         //var detail = await axios.get(`http://localhost:3001/allVideogames/detail/${payload}`)
         const detail = await axios.get(`https://pi-videogames-main-back-r.vercel.app/allVideogames/detail/${payload}`);
         //console.log(detail.data.result)
-         console.log(detail.data)
+         console.log(detail.data.result)
         return dispatch({
           type: "GET_DETAIL",
-          payload: detail.data,
+          payload: detail.data.result,
         });
       } catch (error) {
         console.log(error);
