@@ -12,14 +12,12 @@ export const APIoBD = "APIoBD"
 
 
 
-
 export function getAllVideogames(){
     return async function(dispatch){
       
-      var json = await axios.get('https://pi-videogames-main-back-r.vercel.app/allVideogames')
-        //var json = await axios.get('https://pi-videogames-main-back-r.vercel.app/allVideogames')
+        var json = await axios.get('https://pi-videogames-main-back-r.vercel.app/allVideogames')
         //var json = await axios.get('http://localhost:3001/allVideogames')
-        console.log(json.data)
+        //console.log(json.data)
         return dispatch({
             type: 'GET_ALL_VIDEOGAMES',
             payload: json.data //estara buena esta extraccion de datos?
@@ -37,7 +35,7 @@ export function getDetail(payload) {
          console.log(detail.data.result)
         return dispatch({
           type: "GET_DETAIL",
-          payload: detail.data.result,
+          payload: detail.data.videogameId,
         });
       } catch (error) {
         console.log(error);
