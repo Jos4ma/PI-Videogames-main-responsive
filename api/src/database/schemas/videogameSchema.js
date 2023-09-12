@@ -1,7 +1,7 @@
 const {Schema} = require("mongoose")
 
 const videogameSchema = new Schema({
-    _id: String,
+    _id: Number,
     name: String,
     description: String,
     released: String,

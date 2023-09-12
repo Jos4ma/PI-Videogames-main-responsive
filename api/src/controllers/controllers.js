@@ -1,16 +1,8 @@
 const axios = require('axios')
 const { Gender, Videogame } = require("../db");
-const videogameSchema = require('../database/schemas/videogameSchema');
-//Función para normalizar la respuesta que llega de la api
 const { API_KEY } = process.env;
-const store = require("../database/index.js")
-
-
-const mongoose = require("mongoose")
-// console.log(MONGO_URI)
+const videogame = require("../database/index")
 require("dotenv").config()
-const {MONGO_URI} = process.env
-const conn = mongoose.createConnection(MONGO_URI)
 
 
 async function  pInfo(videogame)  {
@@ -69,22 +61,20 @@ const getApiVideogames = async (req, res) => {
 	}
 };
 
+
 const mongoDatabase = async () => {
-    // const {model} = req.params
-    //response = conn.model("Planet", require("../database/schemas/planetSchema"))
-    var objeto1 = conn.model("Videogame",require("../database/schemas/videogameSchema"))
-    var objeto2 = await objeto1.find()
+    var objeto2 = await videogame.list()
+    //console.log("hola "+objeto2)
     return objeto2.map(objeto=>{
         objeto = objeto._doc;
         for (let clave in objeto) {
           if (clave === '_id') {
-              objeto["id"] = objeto[clave]; // Crea una nueva clave con el nuevo nombre
-              delete objeto[clave]; // Elimina la clave antigua
+              objeto["id"] = objeto[clave]; 
+              delete objeto[clave]; 
           }
         }
         return objeto
         })
-
 }
 
 
@@ -125,22 +115,25 @@ const getAllVideogames = async () => {
         //const dbInfoBig = await getDbInfoAll();
         const dbInfoBig = await mongoDatabase();
         const totalInfo = dbInfoBig.concat(apiInfo);
-        console.log(dbInfoBig)
+        //console.log(dbInfoBig)
         return totalInfo;
   };
 
 
 const joinAllDates = async (req, res) => {
-        const { name } = req.query;
-        const videogamesTotal = await getAllVideogames(); //toda la informacion se une en 
-    if (name) {
-        let videogamesTitle = await videogamesTotal.filter((r) =>
-            r.name.toLowerCase().includes(name.toLowerCase())
-        );
+        const { _id } = req.query;
+    if (_id) {
+        // let videogamesTitle = await videogamesTotal.filter((r) =>
+        //     r.name.toLowerCase().includes(name.toLowerCase())
+        //);
+        var result = await videogame.get({"_id":_id})
+        var videogamesTitle = []
+        videogamesTitle.push(result)
         videogamesTitle.length
             ? res.status(200).json(videogamesTitle)
             : res.status(404).send("This videogame doesn't exist -.-");
     } else {
+         const videogamesTotal = await getAllVideogames();
          res.status(200).json(videogamesTotal);
     }
   };
@@ -160,35 +153,66 @@ const joinAllDates = async (req, res) => {
         }
   };
 
-
-
-  const postVideogame = async (req, res, next) => {
+  const createMongDb = async (req, res, next) => {
     try{
     const {
-        name, released, description, image, genres, platforms
+      _id, name, released, description, image, genders, rating, platforms
       } = req.body;
+      console.log(name)
       if (!name)
         return res.send({
           error: 500,
           message: "You need to enter a name",
         });   
       
-      const video = await Videogame.create({name, released, description, image, platforms})
+      const video = await videogame.create({_id, name, released, description, image, genders, rating, platforms})
       
-      const typeDbArr = await Gender.findAll({
-        where: { name: genres },
-      });
-      
-      const typeDbId = typeDbArr?.map((p) => p.dataValues.id);
-      console.log(typeDbId)
-      await video.addGender(typeDbId);
-      res.send("Videogame created")
+      res.send("Videogame created \n"+video)
      
     }catch(error) { 
             next(error)
         }
     }; 
+
+  // agregar con sequelize
+  // const postVideogame = async (req, res, next) => {
+  //   try{
+  //   const {
+  //       name, released, description, image, genders, rating, platforms
+  //     } = req.body;
+  //     if (!name)
+  //       return res.send({
+  //         error: 500,
+  //         message: "You need to enter a name",
+  //       });   
+      
+  //     const video = await Videogame.create({name, released, description, image, genders, rating, platforms})
+      
+  //     const typeDbArr = await Gender.findAll({
+  //       where: { name: genres },
+  //     });
+      
+  //     const typeDbId = typeDbArr?.map((p) => p.dataValues.id);
+  //     console.log(typeDbId)
+  //     await video.addGender(typeDbId);
+  //     res.send("Videogame created")
+     
+  //   }catch(error) { 
+  //           next(error)
+  //       }
+  //   }; 
   
+    const deleteMongoDb = async (req, res) => {
+        try{
+          const {id} = req.params;
+          const video = await Videogame.findByPk(id)
+        } catch (e){
+            return res.status(404).json("Error ---> " + e)
+        }
+    };
+
+
+
 
     const deleteVideogame = async (req, res) => {
         try {
@@ -199,7 +223,7 @@ const joinAllDates = async (req, res) => {
             res.json("Videogame deleted correctly");
           }
         } catch (e) {
-          return res.status(404).json("Error ---> " + e);
+            return res.status(404).json("Error ---> " + e);
         }
       };
     
@@ -216,7 +240,8 @@ const joinAllDates = async (req, res) => {
   module.exports = {
     joinAllDates,
     // getApiInfoAll,
-    postVideogame, 
+    //postVideogame, 
+    createMongDb,
     getDetail,
     deleteVideogame,
     getAllGenres
