@@ -16,7 +16,7 @@ export default function Home () {
     const dispatch = useDispatch()
     const [order, setOrder] = useState("")
     const allVideogames = useSelector ((state) => state.selectedVideogame)  
-    console.log("cargaInicial",allVideogames)
+//    console.log("cargaInicial",allVideogames)
     const allGenres = useSelector ((state) => state.allGenres)
     const [currentPage, setCurrentPage] = useState(1);
     const [videogamesPerPage, setPokemonsPerPage] = useState(15);  //
@@ -24,7 +24,7 @@ export default function Home () {
     const FirstVideogameIndex = LastVideogameIndex - videogamesPerPage;   // 
     const currentVideogames = allVideogames.slice(FirstVideogameIndex, LastVideogameIndex);
     const loader = useSelector((state) => state.loader)
-    console.log("currentVideo", currentVideogames)
+//    console.log("currentVideo", currentVideogames)
 
     const paginated = (pageNumber) => {
         setCurrentPage(pageNumber);

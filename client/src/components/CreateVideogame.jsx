@@ -28,11 +28,12 @@ export default function CreateVideogame() {
 
 
   let [input, setInput] = useState({
+    _id:"5",
     name: "",
     released: "",
     description: "",
     image: "",
-    genres: [],
+    genders: "Adventure",
     platforms: [],
   });
 
@@ -51,19 +52,21 @@ export default function CreateVideogame() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (Object.values(errors).length === 0 ) {
+    // if (Object.values(errors).length === 0 ) {
       // input.name = input.name.charAt(0).toUpperCase()+input.name.slice(1)
       if (!input.image) input.image=defaultImage
-      input.genres = input.genres.toString()
+      //input.genres = input.genres.toString()
+      console.log(errors)
       input.platforms = input.platforms.toString()
+      console.log(input)
       dispatch(postVideogame(input));
       alert("¡Videogame successfully created!");
       navigate("/home");
-    } else {
-      alert(
-        "All information about the new videogame must be completed and valid, also you have to select a gender"
-      );
-    }
+    // } else {
+    //   alert(
+    //     "All information about the new videogame must be completed and valid, also you have to select a gender"
+    //   );
+    // }
   }
 
   function handleSelectGenres(e) {
@@ -205,7 +208,7 @@ export default function CreateVideogame() {
                   </span>
                 </div>
 
-                <div className={style.inputDiv}>
+                {/* <div className={style.inputDiv}>
                     <select
                       className={style.labelComboBox}
                       onChange={(e) => handleSelectGenres(e)}
@@ -227,7 +230,7 @@ export default function CreateVideogame() {
                   {el}
                   </button>
                 </div>
-                ))}
+                ))} */}
 
 
                 <div className={style.inputDiv}>

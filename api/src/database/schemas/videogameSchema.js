@@ -1,7 +1,7 @@
 const {Schema} = require("mongoose")
 
 const videogameSchema = new Schema({
-    _id: Number,
+    _id: String,
     name: String,
     description: String,
     released: String,
@@ -28,5 +28,10 @@ videogameSchema.statics.get = async function (id){
 videogameSchema.statics.insert = async function (videogame) {
     return await this.create(videogame)
 }
+
+videogameSchema.statics.deleteById = function(_id) {
+    return this.deleteOne({ _id: _id })
+  };
+  
 
 module.exports = videogameSchema
