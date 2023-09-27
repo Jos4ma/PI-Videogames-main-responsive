@@ -55,7 +55,7 @@ console.log(videogameDetail.genders)
                       {/* <Link to={"/home"}>
                         <button className={style.button}>DELETE POKEMON</button>
                       </Link> */}
-                      {videogameDetail.id.length > 5 ? (
+                      {videogameDetail.id.length < 3 ? (
                       <button className={style.button}  onClick={(e) => handleDelete(e)}>
                          DELETE THIS VIDEOGAME
                       </button>
