@@ -19,7 +19,7 @@ export default function Detail() {
 const videogameDetail = useSelector((state) => state.detail);
 
 function handleDelete(e) {
-    if (videogameDetail.id.length > 5) {
+    if (videogameDetail.id.length < 3) {
         e.preventDefault();
         dispatch(deleteVideogame(id));
  //     dispatch(cleaner());
@@ -27,7 +27,7 @@ function handleDelete(e) {
         navigate("/home");
     }
   }
-console.log(videogameDetail.genders)
+//console.log(videogameDetail.genders)
   return (
     <div className={style.fondo}>
     <div className={style.detail}>

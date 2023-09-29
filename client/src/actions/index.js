@@ -26,13 +26,12 @@ export function getAllVideogames(){
 }
 
 export function getDetail(payload) {
-  console.log(payload)
+  //console.log(payload)
     return async function (dispatch) {
       try {
         //var detail = await axios.get(`http://localhost:3001/allVideogames/detail/${payload}`)
         const detail = await axios.get(`https://pi-videogames-main-back-r.vercel.app/allVideogames/detail/${payload}`);
         //console.log(detail.data.result)
-         console.log(detail.data.result)
         return dispatch({
           type: "GET_DETAIL",
           payload: detail.data.videogameId,
@@ -43,12 +42,12 @@ export function getDetail(payload) {
     };
   }
 
-  export function deleteVideogame(id) {
+  export function deleteVideogame(_id) {
     return async function (dispatch) {
       try {
-        console.log(id)
-        var deleteVideogame = await axios.delete(`http://localhost:3001/allVideogames/delete/${id}`)
-        //const deleteVideogame = await axios.delete(`https://pi-videogames-main-back-r.vercel.app/allVideogames/delete/${id}`);
+        console.log(_id)
+        //var deleteVideogame = await axios.delete(`http://localhost:3001/allVideogames/delete/${_id}`)
+        const deleteVideogame = await axios.delete(`https://pi-videogames-main-back-r.vercel.app/allVideogames/delete/${_id}`);
         console.log(deleteVideogame)
         return dispatch({
           type: "DELETE_VIDEOGAME",
@@ -61,7 +60,7 @@ export function getDetail(payload) {
   }
 
   export function postVideogame(input){
-    console.log(input)
+    //console.log(input)
     return async(dispatch)=>{
         //const responsePost = await axios.post('http://localhost:3001/allVideogames/create', input);
         const responsePost = await axios.post('https://pi-videogames-main-back-r.vercel.app/allVideogames/create', input);
@@ -110,6 +109,7 @@ export function getDetail(payload) {
   export function getAllGenres() {
     return async function (dispatch) {
       //let genres = await axios.get("https://pi-videogames-main-back-r.vercel.app/allVideogames/genres");
+      let genres = []
       return dispatch({
         type: "GET_ALL_GENRES",
         payload: genres.data,

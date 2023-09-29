@@ -141,9 +141,9 @@ const joinAllDates = async (req, res) => {
   const getDetail = async(req, res, next) => {
     try {
         const { id } = req.params;
-        console.log(id)
+        //console.log(id)
         var VideogameInfo = await getAllVideogames()
-        console.log(VideogameInfo)
+        //console.log(VideogameInfo)
         var videogameId = VideogameInfo.find((el)=>el.id===id);
         if (videogameId) {
                   return res.json({videogameId});
@@ -160,7 +160,7 @@ const joinAllDates = async (req, res) => {
     const {
       _id, name, released, description, image, genders, rating, platforms
       } = req.body;
-      console.log(name)
+      //console.log(name)
       if (!name)
         return res.send({
           error: 500,
@@ -207,9 +207,9 @@ const joinAllDates = async (req, res) => {
     const deleteMongoDb = async (req, res) => {
         try{
           const {_id} = req.params;
-          console.log(_id)
+          //console.log(_id)
           const video = await videogame.get(_id)
-          console.log(video)
+          //console.log(video)
           if (video !== null) {
             await videogame.deleteById(_id);
             res.json("Videogame deleted correctly");
@@ -221,19 +221,19 @@ const joinAllDates = async (req, res) => {
 
 
 
-
-    const deleteVideogame = async (req, res) => {
-        try {
-          const { id } = req.params;
-          const video = await Videogame.findByPk(id);
-          if (video !== null) {
-            await video.destroy();
-            res.json("Videogame deleted correctly");
-          }
-        } catch (e) {
-            return res.status(404).json("Error ---> " + e);
-        }
-      };
+    //sequelize version delete
+    // const deleteVideogame = async (req, res) => {
+    //     try {
+    //       const { id } = req.params;
+    //       const video = await Videogame.findByPk(id);
+    //       if (video !== null) {
+    //         await video.destroy();
+    //         res.json("Videogame deleted correctly");
+    //       }
+    //     } catch (e) {
+    //         return res.status(404).json("Error ---> " + e);
+    //     }
+    //   };
     
       const getAllGenres = async (req, res) => {
         try {
