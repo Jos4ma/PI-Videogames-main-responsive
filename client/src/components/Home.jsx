@@ -48,7 +48,7 @@ export default function Home () {
     //    setCurrentPage(1);
         setOrder(e.target.value);
       }
-
+      //console.log(allVideogames)
     return (
     
     <div className={style.body}>

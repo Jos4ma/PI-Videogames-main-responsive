@@ -69,7 +69,8 @@ const mongoDatabase = async () => {
         objeto = objeto._doc;
         for (let clave in objeto) {
           if (clave === '_id') {
-              objeto["id"] = objeto[clave]; 
+              objeto["id"] = objeto[clave].toString(); 
+              //console.log(objeto["id"].toString())
               delete objeto[clave]; 
           }
         }
@@ -121,7 +122,7 @@ const getAllVideogames = async () => {
 
 
 const joinAllDates = async (req, res) => {
-        const { _id } = req.query;
+    const { _id } = req.query;
     if (_id) {
         // let videogamesTitle = await videogamesTotal.filter((r) =>
         //     r.name.toLowerCase().includes(name.toLowerCase())
@@ -145,6 +146,7 @@ const joinAllDates = async (req, res) => {
         var VideogameInfo = await getAllVideogames()
         //console.log(VideogameInfo)
         var videogameId = VideogameInfo.find((el)=>el.id===id);
+        //console.log(videogameId)
         if (videogameId) {
                   return res.json({videogameId});
         } else {
@@ -167,7 +169,7 @@ const joinAllDates = async (req, res) => {
           message: "You need to enter a name",
         });   
       
-      const video = await videogame.create({_id:'7', name, released, description, image, genders, rating, platforms})
+      const video = await videogame.create({ name, released, description, image, genders, rating, platforms})
       
       res.send("Videogame created \n"+video)
      

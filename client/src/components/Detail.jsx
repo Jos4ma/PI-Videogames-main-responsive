@@ -19,7 +19,7 @@ export default function Detail() {
 const videogameDetail = useSelector((state) => state.detail);
 
 function handleDelete(e) {
-    if (videogameDetail.id.length < 3) {
+    if (videogameDetail.id.length > 8) {
         e.preventDefault();
         dispatch(deleteVideogame(id));
  //     dispatch(cleaner());
@@ -27,7 +27,7 @@ function handleDelete(e) {
         navigate("/home");
     }
   }
-//console.log(videogameDetail.genders)
+//console.log(videogameDetail)
   return (
     <div className={style.fondo}>
     <div className={style.detail}>
@@ -55,7 +55,7 @@ function handleDelete(e) {
                       {/* <Link to={"/home"}>
                         <button className={style.button}>DELETE POKEMON</button>
                       </Link> */}
-                      {videogameDetail.id.length < 3 ? (
+                      {videogameDetail.id.length > 8 ? (
                       <button className={style.button}  onClick={(e) => handleDelete(e)}>
                          DELETE THIS VIDEOGAME
                       </button>

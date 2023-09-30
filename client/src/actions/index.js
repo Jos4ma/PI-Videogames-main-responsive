@@ -31,7 +31,7 @@ export function getDetail(payload) {
       try {
         //var detail = await axios.get(`http://localhost:3001/allVideogames/detail/${payload}`)
         const detail = await axios.get(`https://pi-videogames-main-back-r.vercel.app/allVideogames/detail/${payload}`);
-        //console.log(detail.data.result)
+        //console.log(detail.data)
         return dispatch({
           type: "GET_DETAIL",
           payload: detail.data.videogameId,
