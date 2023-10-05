@@ -78,7 +78,7 @@ export function getDetail(payload) {
       try {
         //let videogamesNames = await axios.get(`http://localhost:3001/allVideogames?name=${payload}`);
         let videogamesNames = await axios.get(`https://pi-videogames-main-back-r.vercel.app/allVideogames?name=${payload}`);
-        //console.log(pokemonsNames.data)
+        //console.log(videogamesNames.data)
         return dispatch({
           type: "GET_VIDEOGAME_BY_NAME",
           payload: videogamesNames.data,

@@ -22,6 +22,7 @@ export default function Home () {
     const [videogamesPerPage, setPokemonsPerPage] = useState(15);  //
     const LastVideogameIndex = currentPage * videogamesPerPage; //el total de pk x la pag actual nos da el ultimo de la lista
     const FirstVideogameIndex = LastVideogameIndex - videogamesPerPage;   // 
+    //console.log(allVideogames)
     const currentVideogames = allVideogames.slice(FirstVideogameIndex, LastVideogameIndex);
     const loader = useSelector((state) => state.loader)
 //    console.log("currentVideo", currentVideogames)
