@@ -124,24 +124,11 @@ const getAllVideogames = async () => {
 const joinAllDates = async (req, res) => {
     const { name } = req.query;
     if (name) {
-        // let videogamesTitle = await videogamesTotal.filter((r) =>
-        //     r.name.toLowerCase().includes(name.toLowerCase())
-        //);
-        var result = await videogame.list({"name":name})
-        
-        var result2 = result.map(objeto=>{
-          objeto = objeto._doc;
-          for (let clave in objeto) {
-            if (clave === '_id') {
-                objeto["id"] = objeto[clave].toString(); 
-                //console.log(objeto["id"].toString())
-                delete objeto[clave]; 
-            }
-          }
-          return objeto
-          })
-        var videogamesTitle = []
-        videogamesTitle.push(result2)
+        var perro = await getAllVideogames()
+        let videogamesTitle = await perro.filter((r) =>
+            r.name.toLowerCase().includes(name.toLowerCase())
+        );
+
         videogamesTitle.length
             ? res.status(200).json(videogamesTitle)
             : res.status(404).send("This videogame doesn't exist -.-");

@@ -10,7 +10,7 @@
     align-items: center;
 }
 .btn:hover {
-    color: #82ffc9;
+    color: #066139;
     box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
    }
 
@@ -34,12 +34,12 @@
     overflow: none;
     outline: none;
     border: none;
-    background-color: rgba(255, 255, 255, 0.678);
+    background-color: rgba(190, 231, 211, 0.678);
     height: 25px;
 }
 .input:hover {
-    color: #82ffc9;
-    box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+    color: #021d11;
+    box-shadow: inset 0 0 10px rgba(27, 80, 253, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
    }
 
    .input:before {
