@@ -1,3 +1,5 @@
+
+
 .btn{
     background-color: rgb(255, 68, 0);
     background: rgb(223, 225, 235);
@@ -8,6 +10,7 @@
     color: white;
     /* display: flex; */
     align-items: center;
+    margin-right: 1em;
 }
 .btn:hover {
     color: #066139;
@@ -57,3 +60,9 @@
     transform: translateX(15em);
    }
 
+
+   @media screen and (max-width: 480px) {
+    .abc {
+
+    }
+   }
