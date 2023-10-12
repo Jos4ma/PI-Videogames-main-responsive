@@ -15,11 +15,11 @@ export default function CreateVideogame() {
   const genres = useSelector((state) => state.allGenres)
   const video = useSelector((state) => state.videogames)
   var setArr = []
-  
+  console.log(genres)
   video.map((e) => e.platforms?.split(",").map((e) => setArr.push(e.trim())));
   let newData = [...new Set(setArr)]
-
-  var valor = newData.map( (e,index) =>{
+  
+  var platforms = newData.map( (e,index) =>{
     return {
         id: index,
         name: e,
@@ -239,7 +239,7 @@ export default function CreateVideogame() {
                       onChange={(e) => handleSelectPlatforms(e)}
                   >
                     <option hidden>Platforms</option>
-                      {valor.map((el) => (
+                      {platforms.map((el) => (
                       <option value={el.name} key={el.id}>
                       {el.name}
                     </option>

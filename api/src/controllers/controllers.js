@@ -1,7 +1,9 @@
 const axios = require('axios')
-const { Gender, Videogame } = require("../db");
+var {Gender, Videogame} = require("../database/index");
 const { API_KEY } = process.env;
-const videogame = require("../database/index")
+//const Videogame = require("../database/index")
+//const Gender = require("../database/index")
+//const store = require("../database/index.js")
 require("dotenv").config()
 
 
@@ -63,7 +65,7 @@ const getApiVideogames = async (req, res) => {
 
 
 const mongoDatabase = async () => {
-    var objeto2 = await videogame.list()
+    var objeto2 = await Videogame.list()
     //console.log("hola "+objeto2)
     return objeto2.map(objeto=>{
         objeto = objeto._doc;
@@ -238,7 +240,11 @@ const joinAllDates = async (req, res) => {
     
       const getAllGenres = async (req, res) => {
         try {
-            let AllGenresFromDb = await Gender.findAll();
+            //console.log("perro")
+            const AllGenresFromDb = await Gender.list()
+            //console.log(AllGenresFromDb)
+            
+            //let AllGenresFromDb = await Gender.findAll();
             res.status(200).json(AllGenresFromDb);
           } catch (error) {
             console.log(error);
