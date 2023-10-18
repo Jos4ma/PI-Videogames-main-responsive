@@ -108,8 +108,8 @@ export function getDetail(payload) {
 
   export function getAllGenres() {
     return async function (dispatch) {
-      //let genres = await axios.get("https://pi-videogames-main-back-r.vercel.app/allVideogames/genres");
-      let genres = []
+      let genres = await axios.get("https://pi-videogames-main-back-r.vercel.app/allVideogames/genres");
+      //let genres = await axios.get(`http://localhost:3001/allVideogames/genres`);
       return dispatch({
         type: "GET_ALL_GENRES",
         payload: genres.data,

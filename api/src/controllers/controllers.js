@@ -240,14 +240,24 @@ const joinAllDates = async (req, res) => {
     
       const getAllGenres = async (req, res) => {
         try {
-            //console.log("perro")
             const AllGenresFromDb = await Gender.list()
-            //console.log(AllGenresFromDb)
-            
+            var mono = AllGenresFromDb.map(objeto=>{
+              objeto = objeto._doc;
+              for(var key in objeto){
+              if (key === '_id') {
+                console.log(objeto)
+                objeto["id"] = objeto[key].toString(); 
+                delete objeto[key] 
+              }            
+            }    
+            return objeto           
+            })
+
+            console.log(mono)
             //let AllGenresFromDb = await Gender.findAll();
             res.status(200).json(AllGenresFromDb);
           } catch (error) {
-            console.log(error);
+              console.log(error);
           }
       };
 

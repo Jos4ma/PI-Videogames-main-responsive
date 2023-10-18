@@ -11,7 +11,7 @@ import {useState, useEffect} from 'react'
 function NavHome( ) {
 
   const allGenres = useSelector((state) => state.allGenres);
-
+  console.log(allGenres)
   const dispatch = useDispatch()
   const [currentPage, setCurrentPage] = useState(1);
   const [order, setOrder] = useState("");
