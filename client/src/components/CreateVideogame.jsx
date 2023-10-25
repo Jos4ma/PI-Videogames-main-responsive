@@ -15,7 +15,7 @@ export default function CreateVideogame() {
   const genres = useSelector((state) => state.allGenres)
   const video = useSelector((state) => state.videogames)
   var setArr = []
-  console.log(genres)
+  // console.log(genres)
   video.map((e) => e.platforms?.split(",").map((e) => setArr.push(e.trim())));
   let newData = [...new Set(setArr)]
   
@@ -33,7 +33,7 @@ export default function CreateVideogame() {
     released: "",
     description: "",
     image: "",
-    genders: "Adventure",
+    genders: [],
     platforms: [],
   });
 
@@ -56,9 +56,9 @@ export default function CreateVideogame() {
       // input.name = input.name.charAt(0).toUpperCase()+input.name.slice(1)
       if (!input.image) input.image=defaultImage
       //input.genres = input.genres.toString()
-      console.log(errors)
+      // console.log(errors)
       input.platforms = input.platforms.toString()
-      console.log(input)
+      // console.log(input)
       dispatch(postVideogame(input));
       alert("¡Videogame successfully created!");
       navigate("/home");
@@ -70,12 +70,13 @@ export default function CreateVideogame() {
   }
 
   function handleSelectGenres(e) {
-    if (input.genres.length < 4) {
+    // console.log(e)
+    if (input.genders.length < 4) {
       setInput({
         ...input,
-        genres: [...input.genres, e.target.value],
+        genders: [...input.genders, e.target.value],
       });
-      let temps = input.genres;
+      let temps = input.genders;
   
       let findTemp = temps.indexOf(e.target.value);
       if (findTemp >= 0) {
@@ -86,12 +87,20 @@ export default function CreateVideogame() {
       temps.toString()
       setInput({
         ...input,
-        genres: temps,
+        genders: temps,
       });
     } else {
       alert("You can only select 4 genres");
     }
   }
+
+  function handleDeleteGenres(e) {
+    setInput({
+      ...input,
+      genders: input.genders.filter((el) => el !== e),
+    });
+  }
+
 
   function handleSelectPlatforms(e) {
     if (input.platforms.length < 4) {
@@ -117,13 +126,6 @@ export default function CreateVideogame() {
     }
   }
 
-  function handleDeleteGenres(e) {
-    setInput({
-      ...input,
-      genres: input.genres.filter((el) => el !== e),
-    });
-  }
-
   function handleDeletePlatforms(e) {
     setInput({
       ...input,
@@ -136,7 +138,8 @@ export default function CreateVideogame() {
     dispatch(getAllVideogames());
   }, [dispatch]);
 
-  console.log("perro",genres)
+  // console.log("genres",genres)
+  // console.log("platform",platforms)
   return (
     <div className={style.background}>
       <div className={style.degradeFrame}>
@@ -208,12 +211,12 @@ export default function CreateVideogame() {
                   </span>
                 </div>
 
-                {/* <div className={style.inputDiv}>
+                <div className={style.inputDivGenre}>
                     <select
-                      className={style.labelComboBox}
+                      className={style.labelComboBoxGenre}
                       onChange={(e) => handleSelectGenres(e)}
                     >
-                    <option hidden>Genres</option>
+                     <option hidden>Genres</option>
                         {genres.map((el) => (
                     <option value={el.name} key={el.id}>
                           {el.name}
@@ -221,17 +224,18 @@ export default function CreateVideogame() {
                     ))}
                     </select>
                 </div>
-                {input.genres.map((el) => (
-                <div className={style.buttonPlat} key={el}>
+                 {
+                 input.genders.map((el) => (                          //de donde es?
+                  <div className={style.buttonPlat} key={el}>
                   <button
-                      className={style.buttonCreate}
+                      className={style.buttonGenre}
                       onClick={() => handleDeleteGenres(el)}
-                  >
-                  {el}
-                  </button>
+                   >
+                  {el} 
+                  </button>  
                 </div>
-                ))} */}
-
+                ))    
+                } 
 
                 <div className={style.inputDiv}>
                   <select
@@ -250,7 +254,7 @@ export default function CreateVideogame() {
                 {input.platforms.map((el) => (
                 <div className={style.buttonPlat} key={el}>
                     <button
-                        className={style.buttonCreate}
+                        className={style.buttonGenre}
                         onClick={() => handleDeletePlatforms(el)}
                       >
                     { el}

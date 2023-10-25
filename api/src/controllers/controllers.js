@@ -245,7 +245,7 @@ const joinAllDates = async (req, res) => {
               objeto = objeto._doc;
               for(var key in objeto){
               if (key === '_id') {
-                console.log(objeto)
+                //console.log(objeto)
                 objeto["id"] = objeto[key].toString(); 
                 delete objeto[key] 
               }            
@@ -253,7 +253,7 @@ const joinAllDates = async (req, res) => {
             return objeto           
             })
 
-            console.log(mono)
+            //console.log(mono)
             //let AllGenresFromDb = await Gender.findAll();
             res.status(200).json(AllGenresFromDb);
           } catch (error) {

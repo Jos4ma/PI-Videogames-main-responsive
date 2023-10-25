@@ -9,7 +9,7 @@ const videogameSchema = new Schema({
     genders: String,
     platforms: String,
     image: String,
-    // homeworld: { type: String, ref: "Planet"},
+    //genres: { type: String, ref: "Genres"},
     // films: [{ type: String, ref: "Film"}]
 })
 
