@@ -43,7 +43,7 @@ export default function Home () {
 //        setCurrentPage(1);
       }
       function handleGender(e) {
-          console.log(e.target.value)
+        //   console.log(e.target.value)
         e.preventDefault();
         dispatch(filteredByGender(e.target.value));
     //    setCurrentPage(1);
