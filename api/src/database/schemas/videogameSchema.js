@@ -6,10 +6,10 @@ const videogameSchema = new Schema({
     description: String,
     released: String,
     rating: String,
-    genders: String,
+    //genders: String,
     platforms: String,
     image: String,
-    //genres: { type: String, ref: "Genres"},
+    genders: { type: Array, ref: "Genres"},
     // films: [{ type: String, ref: "Film"}]
 })
 

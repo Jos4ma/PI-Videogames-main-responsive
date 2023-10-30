@@ -170,7 +170,7 @@ const joinAllDates = async (req, res) => {
           message: "You need to enter a name",
         });   
       
-      const video = await videogame.create({ name, released, description, image, genders, rating, platforms})
+      const video = await Videogame.create({ name, released, description, image, genders, rating, platforms})
       
       res.send("Videogame created \n"+video)
      
@@ -211,10 +211,10 @@ const joinAllDates = async (req, res) => {
         try{
           const {_id} = req.params;
           //console.log(_id)
-          const video = await videogame.get(_id)
+          const video = await Videogame.get(_id)
           //console.log(video)
           if (video !== null) {
-            await videogame.deleteById(_id);
+            await Videogame.deleteById(_id);
             res.json("Videogame deleted correctly");
           }
         } catch (e){

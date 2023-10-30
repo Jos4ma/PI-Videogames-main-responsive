@@ -2,8 +2,8 @@ const {Schema} = require("mongoose")
 
 const genresSchema = new Schema({
     // _id: String,
-    name: String,
-//    videogame: {type: String, ref: "Videogame"}
+    name: Array,
+    videogame: {type: String, ref: "Videogame"}
 })
 
 genresSchema.statics.list = function () {
