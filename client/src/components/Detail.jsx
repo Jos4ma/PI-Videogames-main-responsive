@@ -43,6 +43,7 @@ function handleDelete(e) {
                         <h5 className={style.h5}>ID: {videogameDetail.id} </h5>        
                         <h5 className={style.h5}>RATING: {videogameDetail.rating} </h5>
                         <h5 className={style.h5}>RELEASED: {videogameDetail.released} </h5>
+                        <h5 className={style.h5}>DESCRIPTION: {videogameDetail.description} </h5>
                         {/* {videogameDetail.platforms?.map((platform,i)=>(
                          <h5 key={i} className={style.h5} >{platform}</h5> 
                         ))}  */}
