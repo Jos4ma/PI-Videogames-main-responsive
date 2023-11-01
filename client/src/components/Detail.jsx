@@ -48,7 +48,7 @@ function handleDelete(e) {
                          <h5 key={i} className={style.h5} >{platform}</h5> 
                         ))}  */}
                         <h5 className={style.h5} >PLATFORMS RELATED: {videogameDetail.platforms}</h5>
-                        <h5 className={style.h5}>GENRES: {videogameDetail.genders} </h5> 
+                        <h5 className={style.h5}>GENRES: {videogameDetail.genders.toString()} </h5> 
                       </div>
                       <Link to={"/home"}>
                         <button className={style.button}>HOME</button>
