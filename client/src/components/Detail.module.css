@@ -198,7 +198,7 @@
           
             flex-direction: column;
         }
-            .boxPicture{
+        .boxPicture{
                 border: 0.5rem solid rgb(29, 96, 88);
                 
                 padding-bottom: 1rem;
@@ -207,8 +207,8 @@
                 flex-direction: column;
                 padding: 0rem;
                 margin-right: 0rem;
-            }
-                .img {
+        }
+        .img {
                     border-radius: 0rem 0rem 0rem 0rem;
                     
                     margin-right: 5%;
@@ -229,7 +229,7 @@
                 padding-bottom: 10%;
             }
 
-                .order{
+            .order{
                     
                     position: sticky;
                     background-color: #a6ddb4;
@@ -242,14 +242,14 @@
                     column-width:auto;
                     } 
 
-                    .h5 {
+            .h5 {
                         color: black;
                         text-align: left;
                         margin-left: 9%;
                         margin-right: 9%;
 
-                    }
-                    .button {
+            }
+            .button {
                         margin-top: 9%;
                         margin-bottom: 0%;
                         --green: #fd1b41;
@@ -269,5 +269,5 @@
                         color: var(--green);
                         box-shadow: inset 0 0 10rem rgba(21, 25, 23, 0.4), 0 0 9rem 3rem rgba(27, 253, 156, 0.1);
                         cursor: pointer;
-                    }
+            }
 }

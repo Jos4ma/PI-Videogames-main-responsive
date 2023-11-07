@@ -15,7 +15,7 @@ export default function CreateVideogame() {
   const genres = useSelector((state) => state.allGenres)
   const video = useSelector((state) => state.videogames)
   var setArr = []
-  console.log(video)
+  //console.log(video)
   video.map((e) => e.platforms?.split(",").map((e) => setArr.push(e.trim())));
   let newData = [...new Set(setArr)]
   

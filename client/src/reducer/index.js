@@ -28,7 +28,7 @@ import {
                     videogames: action.payload,
                     selectedVideogame: action.payload, // action, es la funcion del type y traig
                     loader: false,
-            }
+            };
             case GET_DETAIL:
                 return {
                     ...state,
@@ -38,15 +38,16 @@ import {
                 return {
                     ...state,
               };
-            }
+            };
             case POST_VIDEOGAME:
                 return {
                     ...state
           };
             case GET_VIDEOGAME_BY_NAME:
+              //console.log(state)
                 return {
                     ...state,
-                    selectedVideogame: action.payload, // action, es la funcion del type y traig
+                    selectedVideogame: action.payload, 
                 }
             // case GET_ALL_PLATFORMS:
             //     var plataformas = state.videogames.map(el=>el.platforms)

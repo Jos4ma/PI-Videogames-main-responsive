@@ -27,13 +27,17 @@ export default function Home () {
     const loader = useSelector((state) => state.loader)
 //    console.log("currentVideo", currentVideogames)
 
+    
+   
     const paginated = (pageNumber) => {
         setCurrentPage(pageNumber);
       };
 
+
     useEffect (()=>{
         dispatch(getAllVideogames())
         dispatch(getAllGenres())
+
     },[dispatch])
 
     function handleAlphabetic(e) {
@@ -49,7 +53,7 @@ export default function Home () {
     //    setCurrentPage(1);
         setOrder(e.target.value);
       }
-      //console.log(allVideogames)
+      //console.log(currentVideogames)
     return (
     
     <div className={style.body}>
@@ -76,21 +80,29 @@ export default function Home () {
                     ))}
             </select> */}
 
-            {allVideogames.length > 15 ? (
+            {/* {allVideogames.length > 15 ? (
                     <div className={style.pagination}><Paginated
                         videogamesPerPage={videogamesPerPage}
                         allVideogames={allVideogames.length}
                         paginated={paginated}
                         currentPage={currentPage}
                         /></div>
-                    ) : null}
+                    ) : null} */}
+             {allVideogames.length > 0 ? ( 
+                    <div className={style.pagination}><Paginated
+                        videogamesPerPage={videogamesPerPage}
+                        allVideogames={allVideogames.length}
+                        paginated={paginated}
+                        currentPage={currentPage}
+                        /></div>
+                     ) : null}         
  
         <div className={style.cardsConteiner}>
             {   loader ? (
           <Loader />
         ) : (  
             
-            currentVideogames?.map( el => {      //allBreeds?.map( el => { cuando hay ? esta preguntando si hay datos y si hay mapea
+            currentVideogames?.map( el => {      
                     return (
                          <div key={el.id+"key-home-"}> 
                             <Card id={el.id} name={el.name} genders={el.genders} image={el.image}/>   

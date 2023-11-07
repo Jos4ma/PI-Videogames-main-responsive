@@ -9,16 +9,18 @@ export default function Paginated({
   currentPage,
 }) {
   let pageNumber = [];
-    //console.log(currentPage)
   for (let i = 0; i < Math.ceil(allVideogames / videogamesPerPage); i++) {
     pageNumber.push(i + 1);
   }
-
+  if (allVideogames>=1&&allVideogames<3){ 
+    paginated(1)
+  }
   return (
     <div className={style.wrapperPagination}>
       <nav>
         <ul className={style.pagination}>
-          {currentPage > 1 ? (
+          
+          {currentPage>1 ? (
             <li className={style.pagination__item} onClick={() => paginated(currentPage - 1)}>
               <button className={style.btn}>Prev</button>
             </li>
